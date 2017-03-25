@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node server",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,6 +36,7 @@
     "express": "^4.15.2",
     "graphql": "^0.9.1",
     "graphql-server-express": "^0.6.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "standard": "^9.0.2"
   }
 }
