@@ -1,0 +1,39 @@
+{
+  "name": "codenames-gql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p4bloch/codenames-gql.git"
+  },
+  "babel": {
+    "presets": [
+      "stage-0",
+      "es2015",
+      "react"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p4bloch/codenames-gql/issues"
+  },
+  "homepage": "https://github.com/p4bloch/codenames-gql#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "graphql": "^0.9.1",
+    "graphql-server-express": "^0.6.0",
+    "nodemon": "^1.11.0"
+  }
+}
