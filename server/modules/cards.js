@@ -1,5 +1,7 @@
+import { shuffle } from '@src/utils/collection'
+
 export const getCardsForGame = (gameId) => (
-  new Array(20).fill().reduce((acc, _, index) => {
+  shuffle(new Array(20).fill().reduce((acc, _, index) => {
     if (index < 6) {
       return [...acc, getCard(gameId, 'RED')]
     } else if (index < 12) {
@@ -9,7 +11,7 @@ export const getCardsForGame = (gameId) => (
     } else {
       return [...acc, getCard(gameId, 'DEATH')]
     }
-  }, [])
+  }, []))
 )
 
 const getCard = (gameId, team) => ({
