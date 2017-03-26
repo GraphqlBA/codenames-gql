@@ -1,4 +1,5 @@
 import React from 'react'
+import { gql, graphql } from 'react-apollo'
 
 class Home extends React.Component {
   state = {
@@ -6,20 +7,27 @@ class Home extends React.Component {
   }
 
   render () {
-    const { history } = this.props
+    const { history, createGame } = this.props
 
-    return <form onSubmit={() => history.push(`/${this.gameIdInput.value}`)}>
-      <label>
-        Create a game:
-        <input
-          value={this.state.gameId}
-          onChange={e => this.setState({ gameId: e.target.value })}
-          ref={input => this.gameIdInput = input}/>
-      </label>
+    function onSubmit(e) {
+      e.preventDefault()
+      createGame().then(({ data }) => history.push(`/${data.gameCreate.id}`))
+    }
 
-      <button type='submit'>Go!</button>
+    return <form onSubmit={onSubmit}>
+      <button type='submit'>Start a new game</button>
     </form>
   }
 }
 
-export default Home
+const Mutation = gql`
+  mutation CreateGame {
+    gameCreate {
+      id
+    }
+  }
+`
+
+export default graphql(Mutation, {
+  props: ({ mutate }) => ({ createGame: mutate })
+})(Home)

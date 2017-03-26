@@ -6,13 +6,15 @@ export default {
   all: () => Game.query().eager('cards'),
   byId: (id) => Game.query().eager('cards').findById(id),
   create: () => {
-    Game
+    return Game
       .query()
       .insert({})
       .then(game => {
         getCardsForGame(game.id).map(card => {
           Card.query().insert(card).then()
         })
+
+        return game
       })
   }
 }
