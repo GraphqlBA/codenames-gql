@@ -1,27 +1,30 @@
 import GameConnector from '@src/connectors/GameConnector'
+import CardConnector from '@src/connectors/CardConnector'
 
 export default {
   Query: {
     games () {
       return GameConnector.all()
     },
-    game (root, args) {
-      const { id } = args
+    game (root, { id }) {
       return GameConnector.byId(id)
     },
     cards () {
-      return []
+      return CardConnector.all()
     },
-    card (root, args) {
-      const { id } = args
-      return {
-        id
-      }
+    card (root, { id }) {
+      return CardConnector.byId(id)
     }
   },
   Mutation: {
     gameCreate () {
       return GameConnector.create()
+    },
+    cardSelect (root, { id }) {
+      return CardConnector.select(id)
+    },
+    cardUnselect (root, { id }) {
+      return CardConnector.unselect(id)
     }
   }
 }

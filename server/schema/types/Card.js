@@ -18,6 +18,11 @@ const Card = `
     cards: [Card]
     card(id: Int!): Card
   }
+
+  extend type Mutation {
+    cardSelect(id: Int!): Card
+    cardUnselect(id: Int!): Card
+  }
 `
 
 export default Card
