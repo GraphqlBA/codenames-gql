@@ -17,9 +17,14 @@ function CardGrid ({ cards, cardsPerRow = 5, showUnselected }) {
     row.push(card)
 
     return acc
-  }, []).map(row => (
-    <div className='card-grid__row'>
-      {row.map(card => <Card card={card} showUnselected={showUnselected} />)}
+  }, []).map((row, i) => (
+    <div className='card-grid__row' key={i}>
+      {row.map(card => (
+        <Card
+          key={card.id}
+          card={card}
+          showUnselected={showUnselected} />
+      ))}
     </div>
   ))
 
