@@ -1,12 +1,14 @@
-const typeDefs = `
-  type Game {
-    id: Int!
+import Card from './types/Card'
+import Game from './types/Game'
+
+const Query = `
+  type Query {
+    games: [Game]
   }
 
-  type Query {
-    games: [Game],
-    game(id: Int!): Game
+  type Mutation {
+    gameCreate: Game
   }
 `
 
-export default [typeDefs]
+export default [Query, Card, Game]
