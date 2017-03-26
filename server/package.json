@@ -9,7 +9,8 @@
     "lint:fix": "standard --fix",
     "db:migrate:make": "knex migrate:make",
     "db:migrate": "knex migrate:latest",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,15 @@
       "react"
     ],
     "plugins": [
-      "transform-class-properties"
+      "transform-class-properties",
+      [
+        "module-resolver",
+        {
+          "alias": {
+            "@src": "./"
+          }
+        }
+      ]
     ]
   },
   "standard": {
@@ -38,6 +47,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.1",
+    "babel-plugin-module-resolver": "^2.5.0",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
@@ -47,6 +57,7 @@
     "graphql": "^0.9.1",
     "graphql-server-express": "^0.6.0",
     "graphql-tools": "^0.10.1",
+    "jest": "^19.0.2",
     "knex": "^0.12.9",
     "nodemon": "^1.11.0",
     "objection": "^0.7.10",
