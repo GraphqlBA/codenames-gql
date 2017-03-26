@@ -9,6 +9,6 @@ exports.up = (knex, Promise) => (
 
 exports.down = (knex, Promise) => (
   Promise.all([
-    knex.schema.dropTable('products')
+    knex.schema.dropTable('games')
   ])
 )

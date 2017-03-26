@@ -3,6 +3,9 @@ exports.up = (knex, Promise) => (
     knex.schema.createTable('cards', (table) => {
       table.increments('id').primary().unsigned()
       table.string('name')
+      table.integer('game_id').unsigned()
+      table.string('team')
+      table.boolean('selected').defaultTo(false)
       table.timestamps(true, true)
     })
   ])
