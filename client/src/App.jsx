@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ApolloClient, ApolloProvider } from 'react-apollo'
 import {
   BrowserRouter as Router,
   Route
@@ -6,20 +7,28 @@ import {
 
 import Home from './screens/Home'
 import GameLanding from './screens/GameLanding'
-import Leader from './screens/Leader'
-import Players from './screens/Players'
+
+const client = new ApolloClient({
+  dataIdFromObject: result => {
+    if (result.id && result.__typename) {
+      return result.__typename + result.id
+    }
+
+    return null
+  }
+})
 
 class App extends Component {
   render () {
     return (
-      <Router>
-        <div>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/:gameId' component={GameLanding} />
-          <Route path='/:gameId/leader' component={Leader} />
-          <Route path='/:gameId/players' component={Players} />
-        </div>
-      </Router>
+      <ApolloProvider client={client}>
+        <Router>
+          <div>
+            <Route exact path='/' component={Home} />
+            <Route path='/:gameId' component={GameLanding} />
+          </div>
+        </Router>
+      </ApolloProvider>
     )
   }
 }

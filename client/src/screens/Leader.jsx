@@ -3,11 +3,10 @@ import React from 'react'
 import CardGrid from '../components/CardGrid'
 import WordsList from '../components/WordsList'
 import { TEAMS } from '../constants'
-import { cards } from '../fakeData'
 
 import './Leader.css'
 
-function Leader () {
+function Leader ({ cards }) {
   const blueCards = cards.filter(card => card.team === TEAMS.BLUE)
   const redCards = cards.filter(card => card.team === TEAMS.RED)
 
