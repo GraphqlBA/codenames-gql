@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 
 import Home from './screens/Home'
+import GameLanding from './screens/GameLanding'
 import Leader from './screens/Leader'
 import Players from './screens/Players'
 
@@ -14,8 +15,9 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path='/' component={Home} />
-          <Route path='/leader' component={Leader} />
-          <Route path='/players' component={Players} />
+          <Route exact path='/:gameId' component={GameLanding} />
+          <Route path='/:gameId/leader' component={Leader} />
+          <Route path='/:gameId/players' component={Players} />
         </div>
       </Router>
     )
