@@ -4,7 +4,8 @@ module.exports = {
     client: 'sqlite3',
     connection: {
       filename: `${__dirname}/db.sqlite`
-    }
+    },
+    useNullAsDefault: true
   },
 
   production: {
