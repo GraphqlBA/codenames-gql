@@ -26,6 +26,16 @@
   border-color: #ea3a3a;
 }
 
+.card--is-selected.card--death, .card--hint-unselected.card--death {
+  background-color: #000;
+  color: #fafafa;
+  border-color: #000;
+}
+
+.card--hint-unselected {
+  border-width: 2px;
+}
+
 .card--hint-unselected.card--blue-team {
   border-color: #4598ff;
 }

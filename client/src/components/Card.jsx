@@ -10,6 +10,7 @@ function Card ({ card, showUnselected = false, selectCard }) {
     card.selected && 'card--is-selected',
     card.team === TEAMS.BLUE && 'card--blue-team',
     card.team === TEAMS.RED && 'card--red-team',
+    card.team === TEAMS.DEATH && 'card--death',
     showUnselected && 'card--hint-unselected'
   ].filter(Boolean).join(' ')
 
