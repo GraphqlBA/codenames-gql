@@ -8,3 +8,16 @@
   word-break: break-word;
   text-align: center;
 }
+
+.card--is-selected {
+  box-shadow: none;
+  background-color: #c1c1c1;
+}
+
+.card--is-selected.card--blue-team {
+  background-color: #4598ff;
+}
+
+.card--is-selected.card--red-team {
+  background-color: #ea3a3a;
+}

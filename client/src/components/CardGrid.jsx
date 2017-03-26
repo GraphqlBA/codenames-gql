@@ -3,10 +3,10 @@ import React, { PropTypes } from 'react'
 import Card from './Card'
 import './CardGrid.css'
 
-function CardGrid ({ words }) {
-  const rows = words.map(row => {
+function CardGrid ({ cards }) {
+  const rows = cards.map(row => {
     return <div className='card-grid__row'>
-      {row.map(word => <Card word={word} />)}
+      {row.map(card => <Card card={card} />)}
     </div>
   })
 
@@ -14,8 +14,8 @@ function CardGrid ({ words }) {
 }
 
 CardGrid.propTypes = {
-  words: PropTypes.arrayOf(
-    PropTypes.arrayOf(PropTypes.string)
+  cards: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.object)
   )
 }
 

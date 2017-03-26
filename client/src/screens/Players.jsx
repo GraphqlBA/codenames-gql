@@ -1,37 +1,38 @@
 import React from 'react'
 
 import CardGrid from '../components/CardGrid'
+import { TEAMS } from '../constants'
 import './Players.css'
 
 const cards = [[
-  'Lorem',
-  'ipsum',
-  'dolor',
-  'sit',
-  'amet'
+  { word: 'Lorem' },
+  { word: 'ipsum', team: TEAMS.BLUE, selected: true },
+  { word: 'dolor' },
+  { word: 'sit' },
+  { word: 'amet' }
 ], [
-  'consectetur',
-  'adipiscing',
-  'elit',
-  'Cras',
-  'vitae'
+  { word: 'consectetur' },
+  { word: 'adipiscing', team: TEAMS.BLUE },
+  { word: 'elit' },
+  { word: 'Cras', team: TEAMS.RED, selected: true },
+  { word: 'vitae' }
 ], [
-  'tellus',
-  'at',
-  'urna',
-  'rhoncus',
-  'pretium'
+  { word: 'tellus' },
+  { word: 'at' },
+  { word: 'urna' },
+  { word: 'rhoncus', selected: true },
+  { word: 'pretium' }
 ], [
-  'sit',
-  'amet',
-  'id',
-  'metus',
-  'Sed'
+  { word: 'sit' },
+  { word: 'amet' },
+  { word: 'id' },
+  { word: 'metus' },
+  { word: 'Sed' }
 ]]
 
 function Players () {
   return <div className='players-card-grid'>
-    <CardGrid words={cards} />
+    <CardGrid cards={cards} />
   </div>
 }
 
