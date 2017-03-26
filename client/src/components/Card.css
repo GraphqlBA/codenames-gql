@@ -12,12 +12,23 @@
 .card--is-selected {
   box-shadow: none;
   background-color: #c1c1c1;
+  border-color: #c1c1c1;
 }
 
 .card--is-selected.card--blue-team {
   background-color: #4598ff;
+  border-color: #4598ff;
 }
 
 .card--is-selected.card--red-team {
   background-color: #ea3a3a;
+  border-color: #ea3a3a;
+}
+
+.card--hint-unselected.card--blue-team {
+  border-color: #4598ff;
+}
+
+.card--hint-unselected.card--red-team {
+  border-color: #ea3a3a;
 }

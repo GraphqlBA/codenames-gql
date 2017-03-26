@@ -1,0 +1,8 @@
+.leaders-board .card {
+  font-size: 12px;
+}
+
+.team-cards {
+  display: flex;
+  justify-content: space-around;
+}
