@@ -1,0 +1,12 @@
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: center;
+}
+
+.card-grid__row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
