@@ -56,12 +56,14 @@
     "express": "^4.15.2",
     "graphql": "^0.9.1",
     "graphql-server-express": "^0.6.0",
+    "graphql-subscriptions": "^0.3.1",
     "graphql-tools": "^0.10.1",
     "jest": "^19.0.2",
     "knex": "^0.12.9",
     "nodemon": "^1.11.0",
     "objection": "^0.7.10",
     "sqlite3": "^3.1.8",
-    "standard": "^9.0.2"
+    "standard": "^9.0.2",
+    "subscriptions-transport-ws": "^0.5.5-alpha.0"
   }
 }

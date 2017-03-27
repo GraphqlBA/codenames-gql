@@ -9,6 +9,10 @@ const Query = `
   type Mutation {
     gameCreate: Game
   }
+
+  type Subscription {
+    cardSelected(gameId: Int!): Card
+  }
 `
 
 export default [Query, Card, Game]

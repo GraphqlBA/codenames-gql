@@ -26,5 +26,8 @@ export default {
     cardUnselect (root, { id }) {
       return CardConnector.unselect(id)
     }
-  }
+  },
+  // Subscription: {
+  //   cardSelected:
+  // }
 }
