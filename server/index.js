@@ -15,6 +15,8 @@ import Knex from 'knex'
 const knex = Knex(knexConfig.development)
 Model.knex(knex)
 
+knex.migrate.latest()
+
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
