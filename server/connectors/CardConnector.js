@@ -1,5 +1,5 @@
 import Card from '@src/models/Card'
-import pubsub from '@src/pubsub'
+import { pubsub } from '@src/pubsub'
 
 export default {
   all: () => Card.query().eager('game'),

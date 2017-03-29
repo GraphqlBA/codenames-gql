@@ -13,7 +13,8 @@
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "react-scripts": "0.9.5",
-    "standard": "^9.0.2"
+    "standard": "^9.0.2",
+    "subscriptions-transport-ws": "^0.5.5-alpha.0"
   },
   "scripts": {
     "start": "react-scripts start",

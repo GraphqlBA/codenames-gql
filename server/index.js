@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express'
 import { makeExecutableSchema } from 'graphql-tools'
 import { SubscriptionManager } from 'graphql-subscriptions'
-import pubsub from './pubsub'
+import { pubsub } from './pubsub'
 import { createServer } from 'http'
 import { SubscriptionServer } from 'subscriptions-transport-ws'
 import typeDefs from '@src/schema'
@@ -26,7 +26,7 @@ const subscriptionManager = new SubscriptionManager({
   setupFunctions: {
     cardSelected: (options, args) => ({
       cardSelected: {
-        filter: card => card.game_id === args.gameId
+        filter: card => card.game_id === Number(args.gameId)
       }
     })
   }

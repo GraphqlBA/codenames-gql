@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { ApolloClient, ApolloProvider } from 'react-apollo'
+import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo'
+import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws';
 import {
   BrowserRouter as Router,
   Route
@@ -8,7 +9,21 @@ import {
 import Home from './screens/Home'
 import GameLanding from './screens/GameLanding'
 
+const wsClient = new SubscriptionClient(`ws://localhost:5000/`, {
+  reconnect: true
+})
+
+const networkInterface = createNetworkInterface({
+  uri: '/graphql'
+})
+
+const networkInterfaceWithSubscriptions = addGraphQLSubscriptions(
+  networkInterface,
+  wsClient
+)
+
 const client = new ApolloClient({
+  networkInterface: networkInterfaceWithSubscriptions,
   dataIdFromObject: result => {
     if (result.id && result.__typename) {
       return result.__typename + result.id
