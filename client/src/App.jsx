@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo'
-import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws';
+import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws'
 import {
   BrowserRouter as Router,
   Route
