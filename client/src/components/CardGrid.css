@@ -5,8 +5,10 @@
   align-items: center;
 }
 
-.card-grid__row {
+.card-grid__container {
   display: flex;
-  justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  justify-content: space-between;
 }

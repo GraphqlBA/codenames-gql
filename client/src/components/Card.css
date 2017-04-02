@@ -3,8 +3,8 @@
 }
 
 .card {
-  width: 100%;
-  margin: 1.5em;
+  width: 16%;
+  margin: 2%;
   padding: 3.5em 0;
   border-radius: 2px;
   box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.88);
@@ -60,4 +60,16 @@
 
 .card--leader.card--is-selected {
   opacity: .5;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 20%;
+  }
+}
+
+@media (max-width: 350px) {
+  .card {
+    width: 25%;
+  }
 }

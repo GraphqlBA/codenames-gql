@@ -4,7 +4,7 @@
 
 .WordsList li {
   display: inline;
-  margin-right: 1em;
+  margin-right: .5em;
   color: #fff;
   padding: .5em 1em;
   border-radius: 1em;

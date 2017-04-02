@@ -4,31 +4,18 @@ import Card from './Card'
 import './CardGrid.css'
 
 function CardGrid ({ cards, cardsPerRow = 5, isLeader }) {
-  const rows = cards.reduce((acc, card, i) => {
-    let row
-
-    if (i % cardsPerRow === 0) {
-      row = []
-      acc.push(row)
-    } else {
-      row = acc[acc.length - 1]
-    }
-
-    row.push(card)
-
-    return acc
-  }, []).map((row, i) => (
-    <div className='card-grid__row' key={i}>
-      {row.map(card => (
-        <Card
-          key={card.id}
-          card={card}
-          isLeader={isLeader} />
-      ))}
+  return (
+    <div className='card-grid'>
+      <div className='card-grid__container'>
+        {cards.map(card => (
+          <Card
+            key={card.id}
+            card={card}
+            isLeader={isLeader} />
+        ))}
+      </div>
     </div>
-  ))
-
-  return <div className='card-grid'>{rows}</div>
+  )
 }
 
 CardGrid.propTypes = {
