@@ -1,4 +1,4 @@
-import { getCardsForGame } from './cards'
+import { getCardsForGame, getCardNames } from './cards'
 
 describe('getCardsForGame', () => {
   it('returns 20 cards', () => {
@@ -17,5 +17,12 @@ describe('getCardsForGame', () => {
     expect(blueCards.length).toBe(6)
     expect(neutralCards.length).toBe(7)
     expect(deathCards.length).toBe(1)
+  })
+})
+
+describe('getCardNames', () => {
+  it('returns the given amount of cards', () => {
+    const names = getCardNames(20)
+    expect(names.length).toBe(20)
   })
 })
