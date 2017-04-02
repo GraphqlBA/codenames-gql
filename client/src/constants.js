@@ -1,5 +1,6 @@
 export const TEAMS = {
   BLUE: 'BLUE',
   RED: 'RED',
-  DEATH: 'DEATH'
+  DEATH: 'DEATH',
+  NEUTRAL: 'NEUTRAL',
 }

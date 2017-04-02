@@ -1,0 +1,24 @@
+.WordsList {
+  padding-left: 1em;
+}
+
+.WordsList li {
+  display: inline;
+  margin-right: 1em;
+  color: #fff;
+  padding: .5em 1em;
+  border-radius: 1em;
+  font-size: .8em;
+}
+
+.WordsList li.selected {
+  opacity: .5;
+}
+
+.WordsList li.blue {
+  background-color: var(--blue);
+}
+
+.WordsList li.red {
+  background-color: var(--red);
+}

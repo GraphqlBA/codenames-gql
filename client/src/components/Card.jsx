@@ -4,14 +4,15 @@ import { gql, graphql } from 'react-apollo'
 import { TEAMS } from '../constants'
 import './Card.css'
 
-function Card ({ card, showUnselected = false, selectCard }) {
+function Card ({ card, isLeader = false, selectCard }) {
   const classes = [
     'card',
     card.selected && 'card--is-selected',
     card.team === TEAMS.BLUE && 'card--blue-team',
     card.team === TEAMS.RED && 'card--red-team',
     card.team === TEAMS.DEATH && 'card--death',
-    showUnselected && 'card--hint-unselected'
+    card.team === TEAMS.NEUTRAL && 'card--neutral',
+    isLeader && 'card--leader'
   ].filter(Boolean).join(' ')
 
   return <div className={classes} onClick={() => selectCard(card.id)}>

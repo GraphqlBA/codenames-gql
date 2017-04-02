@@ -12,17 +12,15 @@ function Leader ({ cards }) {
 
   return <div>
     <div className='leaders-board'>
-      <CardGrid cards={cards} showUnselected />
       <div className='team-cards'>
         <div>
-          Blue Cards:
-          <WordsList cards={blueCards} />
+          <WordsList cards={blueCards} team='blue' />
         </div>
         <div>
-          Red Cards:
-          <WordsList cards={redCards} />
+          <WordsList cards={redCards} team='red' />
         </div>
       </div>
+      <CardGrid cards={cards} isLeader />
     </div>
   </div>
 }

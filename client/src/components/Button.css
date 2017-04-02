@@ -1,0 +1,23 @@
+.Button {
+  padding: 1em;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #fff;
+  font-size: .8em;
+  font-weight: bold;
+  background: var(--red-blue-gradient);
+  text-transform: uppercase;
+  box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+.Button--big {
+  font-size: 1em;
+  padding: 1.5em;
+}
+
+.Button:hover {
+  box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.88);
+}

@@ -1,0 +1,8 @@
+:root {
+  --mainBg: #eee;
+  --selected-color: #fafafa;
+  --blue: #4598ff;
+  --red: #ea3a3a;
+  --neutral: #ccc;
+  --red-blue-gradient: linear-gradient(to right, #ea3a3a, #4598ff);
+}

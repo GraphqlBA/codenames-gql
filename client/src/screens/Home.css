@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: var(--mainBg);
+}
+
+.container h1 {
+  font-size: 3em;
+}

@@ -1,22 +1,22 @@
 import React from 'react'
 import { gql, graphql } from 'react-apollo'
 import {
-  Link,
   Route
 } from 'react-router-dom'
 
 import Leader from './Leader'
 import Players from './Players'
+import Button from '../components/Button'
 
 class GameLanding extends React.Component {
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps (newProps) {
     if (this.props.data.loading && !newProps.data.loading) {
-      newProps.subscribeToCardSelected({ gameId: this.props.match.params.gameId });
+      newProps.subscribeToCardSelected({ gameId: this.props.match.params.gameId })
     }
   }
 
-  render() {
-    const { match, data } = this.props;
+  render () {
+    const { match, data } = this.props
 
     if (data.loading) {
       return <div>Loading...</div>
@@ -24,20 +24,23 @@ class GameLanding extends React.Component {
 
     return <div>
       <Route exact path={match.url} render={() => (
-        <div>
-          Welcome to the {match.params.gameId} game, are you a player or a team leader?
-          <ul>
-            <li><Link to={`${match.url}/leader`}>Leader</Link></li>
-            <li><Link to={`${match.url}/players`}>Players</Link></li>
-          </ul>
+        <div className='container'>
+          <p style={{textAlign: 'center'}}>
+            👋 Bienvenidx al juego `{match.params.gameId}`<br />
+            <i>¿Sos jugador o lider?</i>
+          </p>
+          <div style={{marginTop: '.8em'}}>
+            <Button style={{marginRight: '1.5em'}} to={`${match.url}/jugador`}>Jugador</Button>
+            <Button to={`${match.url}/lider`}>Lider</Button>
+          </div>
         </div>
       )} />
 
-      <Route path={`${match.url}/leader`} render={() => (
+      <Route path={`${match.url}/lider`} render={() => (
         <Leader cards={data.game.cards} />
       )} />
 
-      <Route path={`${match.url}/players`} render={() => (
+      <Route path={`${match.url}/jugador`} render={() => (
         <Players cards={data.game.cards} />
       )} />
     </div>

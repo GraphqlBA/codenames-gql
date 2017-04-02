@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 import Card from './Card'
 import './CardGrid.css'
 
-function CardGrid ({ cards, cardsPerRow = 5, showUnselected }) {
+function CardGrid ({ cards, cardsPerRow = 5, isLeader }) {
   const rows = cards.reduce((acc, card, i) => {
     let row
 
@@ -23,7 +23,7 @@ function CardGrid ({ cards, cardsPerRow = 5, showUnselected }) {
         <Card
           key={card.id}
           card={card}
-          showUnselected={showUnselected} />
+          isLeader={isLeader} />
       ))}
     </div>
   ))

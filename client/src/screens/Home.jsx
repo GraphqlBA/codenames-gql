@@ -1,5 +1,7 @@
 import React from 'react'
 import { gql, graphql } from 'react-apollo'
+import './Home.css'
+import Button from '../components/Button'
 
 class Home extends React.Component {
   state = {
@@ -14,9 +16,14 @@ class Home extends React.Component {
       createGame().then(({ data }) => history.push(`/${data.gameCreate.id}`))
     }
 
-    return <form onSubmit={onSubmit}>
-      <button type='submit'>Start a new game</button>
-    </form>
+    return (
+      <div className="container">
+        <h1>⭐️ Codenames ⭐️</h1>
+        <form onSubmit={onSubmit}>
+          <Button type='submit' size='big'>Comenzar a jugar</Button>
+        </form>
+      </div>
+    )
   }
 }
 
