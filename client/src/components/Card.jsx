@@ -15,7 +15,7 @@ function Card ({ card, isLeader = false, selectCard }) {
     isLeader && 'card--leader'
   ].filter(Boolean).join(' ')
 
-  return <div className={classes} onClick={() => selectCard(card.id)}>
+  return <div className={classes} onClick={() => !isLeader && selectCard(card.id)}>
     {card.name}
   </div>
 }
