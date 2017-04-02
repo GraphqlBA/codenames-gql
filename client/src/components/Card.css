@@ -50,10 +50,6 @@
   color: #fafafa;
 }
 
-.card--leader {
-  border-width: 2px;
-}
-
 .card--leader.card--blue-team {
   background-color: var(--blue);
 }
