@@ -14,7 +14,7 @@ const wsClient = new SubscriptionClient(`ws://localhost:5000/`, {
 })
 
 const networkInterface = createNetworkInterface({
-  uri: '/graphql'
+  uri: '/api/graphql'
 })
 
 const networkInterfaceWithSubscriptions = addGraphQLSubscriptions(

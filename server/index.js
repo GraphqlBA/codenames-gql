@@ -32,14 +32,14 @@ const subscriptionManager = new SubscriptionManager({
   }
 })
 
-const PORT = 3000
-const WS_PORT = 5000
+const PORT = process.env.PORT || 3000
+const WS_PORT = process.env.WS_PORT || 5000
 
 var app = express()
 
 // bodyParser is needed just for POST.
-app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
-app.use('/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/graphql' }))
+app.use('/api/graphql', bodyParser.json(), graphqlExpress({ schema }))
+app.use('/api/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/api/graphql' }))
 
 app.listen(PORT)
 
