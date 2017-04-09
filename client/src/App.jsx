@@ -9,7 +9,9 @@ import {
 import Home from './screens/Home'
 import GameLanding from './screens/GameLanding'
 
-const wsClient = new SubscriptionClient(`ws://localhost:5000/`, {
+const wsPort = process.env.REACT_APP_WS_PORT || 5000
+
+const wsClient = new SubscriptionClient(`ws://localhost:${wsPort}/`, {
   reconnect: true
 })
 
